@@ -161,7 +161,7 @@ plot_behavior <- function(
 
     # Create the plot
     g <- ggplot2::ggplot(dfm, ggplot2::aes(
-        'time', 'value', color = 'variable'
+        time, value, color = variable
     )) +
         ggplot2::theme_minimal(base_size = 18) +
         ggplot2::labs(x = x_label, y = y_label, color = legend_name) +
@@ -183,18 +183,18 @@ plot_behavior <- function(
     }
     if(variable_line_type) {
         g <- g +
-            ggplot2::aes(linetype = 'variable') +
+            ggplot2::aes(linetype = variable) +
             ggplot2::labs(linetype = legend_name)
     }
     if(variable_point_type) {
         g <- g +
-            ggplot2::aes(shape = 'variable') +
+            ggplot2::aes(shape = variable) +
             ggplot2::labs(shape = legend_name)
     }
     if(!is.null(line_types)) {
         g <- g +
             ggplot2::scale_linetype_manual(values = line_types) +
-            ggplot2::aes(linetype = 'variable') +
+            ggplot2::aes(linetype = variable) +
             ggplot2::labs(linetype = legend_name)
     }
 
