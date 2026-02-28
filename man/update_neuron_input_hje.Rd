@@ -16,7 +16,7 @@ The neuron received as input but with its input changed.
 }
 \description{
 Use this function to update the neuron (returned by
-\code{\link{get_neuron_hje}()}) input according to the bindings
+\verb{\link{get_neuron_hje}()}) input according to the bindings
 that are connect to it. Once this function was used, it can't be used
 on the same neuron again since the reaction that will replaced will not
 exists.

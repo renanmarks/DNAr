@@ -6,6 +6,9 @@
 \usage{
 get_products(reaction)
 }
+\arguments{
+\item{reaction}{A string representing the reaction.}
+}
 \description{
 This function returns the products of a reactions,
 removing their stoichiometry. If the reaction is of the type

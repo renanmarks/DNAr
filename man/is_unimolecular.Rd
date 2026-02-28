@@ -6,6 +6,9 @@
 \usage{
 is_unimolecular(react_str)
 }
+\arguments{
+\item{react_str}{A string representing the reaction}
+}
 \description{
 Given a reaction, this functions checks if it is
 a unimolecular reaction.

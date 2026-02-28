@@ -6,6 +6,9 @@
 \usage{
 remove_stoichiometry(species)
 }
+\arguments{
+\item{species}{A string containing the species from a reaction_part.}
+}
 \value{
 The species string without the stoichiometry (number)
 specifying the number of molecules

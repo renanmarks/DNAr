@@ -2,7 +2,7 @@
 % Please edit documentation in R/neuron_hjelmfelt.R
 \name{get_neuron_hje}
 \alias{get_neuron_hje}
-\title{Get a neuron based on Hjelmfelt A. et al. \code{[1]} approach}
+\title{Get a neuron based on Hjelmfelt A. et al. \verb{[1]} approach}
 \usage{
 get_neuron_hje(name, input_ci)
 }
@@ -17,10 +17,10 @@ A CRN representing the neuron.
 }
 \description{
 This function returns a neuron based on the model described by
-Hjelmfelt A. et al. \code{[1]}.
+Hjelmfelt A. et al. \verb{[1]}.
 }
 \references{
 \itemize{
-\item \code{[1]} \insertRef{hjelmfelt1991chemical}{DNAr}
+\item \verb{[1]} \insertRef{hjelmfelt1991chemical}{DNAr}
 }
 }

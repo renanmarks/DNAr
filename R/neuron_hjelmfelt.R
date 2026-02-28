@@ -15,7 +15,6 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-
 #' Get a neuron based on Hjelmfelt A. et al. `[1]` approach
 #'
 #' This function returns a neuron based on the model described by
@@ -26,6 +25,8 @@
 #'                  the input
 #'
 #' @return  A CRN representing the neuron.
+#'
+#' @importFrom Rdpack reprompt
 #'
 #' @export
 #'
@@ -195,7 +196,8 @@ update_neuron_input_hje <- function(neuron, bindings) {
 #'
 #' @param gate_name               String specifying the gate name. Used for
 #'                                identification purpose.
-#' @param input_neuron_name       A list of string. Each string specifies
+#' @param input_neuron_names      A list of string. Each string specifies a
+#'                                neuron name.
 #' @param output_neuron_name      A string being the output neuron name
 #' @param input_neuron_cis        A vector of number representing the
 #'                                initial concentration of each neuron
@@ -853,7 +855,7 @@ get_neuron_majority_gate <- function(
     })
 
     # Get the gate
-    gate <- DNAr:::get_neuron_generic_gate_hje(
+    gate <- get_neuron_generic_gate_hje(
         gate_name = gate_name,
         input_neuron_names = input_names,
         output_neuron_name = output_name,

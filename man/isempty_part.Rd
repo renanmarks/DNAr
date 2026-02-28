@@ -6,6 +6,9 @@
 \usage{
 isempty_part(react_part)
 }
+\arguments{
+\item{react_part}{A string containing part of the reaction}
+}
 \description{
 This function is useful when you have a reaction and
 you want to check if it is something like 'A -> 0' (something to nothing).

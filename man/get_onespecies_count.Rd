@@ -6,6 +6,11 @@
 \usage{
 get_onespecies_count(one_species, reaction_part)
 }
+\arguments{
+\item{one_species}{A string containing a species from reaction_part.}
+
+\item{reaction_part}{Left or right part of a reaction.}
+}
 \description{
 With the reaction part 'A + B ', for instance, and \code{one_species}
 begin equal to 'A', this function would return 1. On the case of '2A ' it

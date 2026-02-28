@@ -7,9 +7,30 @@
 \usage{
 check_crn(species, ci, reactions, ki, t)
 }
+\arguments{
+\item{species}{A vector with the species of the reaction. The order of
+this vector is important because it will define the
+column order of the returned behavior.}
+
+\item{ci}{A vector specifying the initial concentrations of the
+\code{species} specified, in order.}
+
+\item{reactions}{A vector with the reactions of the CRN. If a reaction has
+has only reactants that are non in \code{species}, this
+reaction will be treated as \code{0 -> products}. Furthermore,
+this function treats a reaction \code{non_registered_species + registered_species -> products} equally to
+\code{registered_species -> products}, ignoring the species non
+registered on the \code{species} vector.}
+
+\item{ki}{A vector defining the constant rate of each reaction
+in \code{reactions}, in order.}
+
+\item{t}{A vector specifying the time interval. Each value
+would be a specific time point.}
+}
 \value{
 The reactions after the preprocessing made by
-\code{\link{check_fix_reaction}()} witch checks the reactions and fix
+\verb{\link{check_fix_reaction}()} witch checks the reactions and fix
 them when it is possible.
 }
 \description{

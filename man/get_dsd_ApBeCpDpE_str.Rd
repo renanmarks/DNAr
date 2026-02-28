@@ -4,8 +4,21 @@
 \alias{get_dsd_ApBeCpDpE_str}
 \title{Instantiate a 'A + B -> C + D + E' module in the DSD script}
 \usage{
-get_dsd_ApBeCpDpE_str(qi, qmax, CiA, CiB, CiC, CiD, CiE, Cmax, A_domains,
-  B_domains, C_domains, D_domains, E_domains)
+get_dsd_ApBeCpDpE_str(
+  qi,
+  qmax,
+  CiA,
+  CiB,
+  CiC,
+  CiD,
+  CiE,
+  Cmax,
+  A_domains,
+  B_domains,
+  C_domains,
+  D_domains,
+  E_domains
+)
 }
 \arguments{
 \item{qi}{String representing a variable name for the \code{qi}

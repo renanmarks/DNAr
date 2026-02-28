@@ -4,8 +4,47 @@
 \alias{save_dsd_script}
 \title{Export a DSD script for a CRN}
 \usage{
-save_dsd_script(species, ci, reactions, ki, qmax, cmax, alpha, beta, t,
-  filename)
+save_dsd_script(
+  species,
+  ci,
+  reactions,
+  ki,
+  qmax,
+  cmax,
+  alpha,
+  beta,
+  t,
+  filename
+)
+}
+\arguments{
+\item{species}{A vector with the species of the reaction. The order of
+this vector is important because it will define the
+column order of the returned behavior. The species names
+\verb{L[0-9]*}, \verb{H[0-9]*}, \verb{W[0-9]*}, \verb{O[0-9]*},
+\verb{T[0-9]*}, \verb{G[0-9]*}, \verb{LS[0-9]*}, \verb{HS[0-9]*},
+\verb{WS[0-9]*} are not supported. For more information
+about this, see the Section of \strong{Known limitations}.}
+
+\item{ci}{A vector specifying the initial concentrations of the
+\code{species} specified, in order.}
+
+\item{reactions}{A vector with the reactions of the CRN^*.}
+
+\item{ki}{A vector defining the constant rate of each reaction
+in \code{reactions}, in order.}
+
+\item{qmax}{Maximum rate constant for the auxiliary reactions.}
+
+\item{cmax}{Maximum initial concentration for the auxiliary species.}
+
+\item{alpha, beta}{Rescaling parameters.}
+
+\item{t}{A vector specifying the time interval. Each value
+would be a specific time point.}
+
+\item{filename}{The name of the file that will be exported and should be specified with
+an extension, since there is no standard extension for DSD scripts.}
 }
 \description{
 Use this function to export a CRN to a DSD script using the 4-domain

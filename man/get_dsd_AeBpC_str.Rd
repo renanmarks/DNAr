@@ -4,8 +4,17 @@
 \alias{get_dsd_AeBpC_str}
 \title{Instantiate a 'A -> B + C' module in the DSD script}
 \usage{
-get_dsd_AeBpC_str(qi, qmax, CiA, CiB, CiC, Cmax, A_domains, B_domains,
-  C_domains)
+get_dsd_AeBpC_str(
+  qi,
+  qmax,
+  CiA,
+  CiB,
+  CiC,
+  Cmax,
+  A_domains,
+  B_domains,
+  C_domains
+)
 }
 \arguments{
 \item{qi}{String representing a variable name for the \code{qi}

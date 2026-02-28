@@ -6,6 +6,9 @@
 \usage{
 get_second_part(react_str)
 }
+\arguments{
+\item{react_str}{A string representing the reaction}
+}
 \description{
 Given a reaction like 'A + B -> C', this function
 returns ' C'.

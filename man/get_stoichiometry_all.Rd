@@ -6,6 +6,9 @@
 \usage{
 get_stoichiometry_all(reaction)
 }
+\arguments{
+\item{reaction}{A string representing the reaction}
+}
 \value{
 a list with left_sto and right_sto being the stoichiometry
 of the left and right part respectively.

@@ -8,8 +8,6 @@ dsd_4d_modules()
 }
 \value{
 The matrix of functions which can be accesses with [[i,j]]
-
-[[i,j]: R:[i,j
 }
 \description{
 This function returns a matrix with all available 4-domain modules
@@ -23,7 +21,4 @@ line 1, and the degradation reactions are in the column 1 ([[,1]]).
 
 The position [[1,1]] is filled with \code{NA} because it represents an
 invalid reaction (\code{0 -> 0}).
-
-[[,1]: R:[,1
-[[1,1]: R:[1,1
 }

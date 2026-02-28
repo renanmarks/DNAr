@@ -17,16 +17,16 @@ whether the input with the same index will
 be an inhibitory binding or not. If no vector
 is passed, no binding will be inhibited. This
 parameter is passed to
-\code{\link{get_neuron_generic_gate_hje}()}.}
+\verb{\link{get_neuron_generic_gate_hje}()}.}
 }
 \value{
 A list representing the gate. To transform this representation into
-a CRN (to simulate with \code{\link{react}()}, for example) you have
-to use the function \code{\link{get_crn_from_neuron_gate_hje}()}.
+a CRN (to simulate with \verb{\link{react}()}, for example) you have
+to use the function \verb{\link{get_crn_from_neuron_gate_hje}()}.
 }
 \description{
 This function returns an AND gate using neurons based on McCullogh-Pitts
-model (neurons returned by \code{\link{get_neuron_hje}()}). The two input neurons
+model (neurons returned by \verb{\link{get_neuron_hje}()}). The two input neurons
 have the name \code{i1} and \code{i2}, and the output neuron has the \code{o} name. This
 (with the gate name) determines the species names created for the CRNs
 that represent them.

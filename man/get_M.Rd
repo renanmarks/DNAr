@@ -6,6 +6,13 @@
 \usage{
 get_M(reactions, species)
 }
+\arguments{
+\item{reactions}{A vector with the reactions of the CRN.}
+
+\item{species}{A vector with the species of the reaction. The order of
+this vector is important because it will define the
+column order of the returned behavior.}
+}
 \value{
 A list with the named indexes \code{prod} (stoichiometry matrix of the
 products), \code{react} (stoichiometry matrix of reactants) and \code{M}

@@ -6,11 +6,21 @@
 \usage{
 get_buff_modules(reactions, ki, qmax, cmax)
 }
+\arguments{
+\item{reactions}{A vector with the reactions of the CRN.}
+
+\item{ki}{A vector defining the constant rate of each reaction
+in \code{reactions}, in order.}
+
+\item{qmax}{Maximum rate constant for the auxiliary reactions.}
+
+\item{cmax}{Maximum initial concentration for the auxiliary species.}
+}
 \value{
 \code{NULL} if no buffer modules were added. Otherwise
 it returns a list with:
 \itemize{
-\item \code{lambda_1}      = lambda^{-1} value;
+\item \code{lambda_1}      = lambda^\{-1\} value;
 \item \code{new_species}   = vector with the new species added;
 \item \code{new_cis}       = vector with the initial concentrations;
 \item \code{new_reactions} = vector with the new reactions;
@@ -19,12 +29,12 @@ it returns a list with:
 }
 \description{
 This function is used to add buffer modules according
-to the theory described by Soloveichik D et al. \code{[1]}.
+to the theory described by Soloveichik D et al. \verb{[1]}.
 The parameters of this function follows the same
 semantics of \code{\link{react_4domain}()}.
 }
 \references{
 \itemize{
-\item \code{[1]} \insertRef{soloveichik2010dna}{DNAr}
+\item \verb{[1]} \insertRef{soloveichik2010dna}{DNAr}
 }
 }

@@ -16,7 +16,7 @@ reaction received as input if everything is ok.
 \description{
 This function is used for the check and fix (if possible) of a reaction.
 It is checked if there is an empty side, if both sides only contains
-\code{0}'s, when the relation operator between sides (\code{->}) is missing. It also
+\code{0}'s, when the relation operator between sides (\verb{->}) is missing. It also
 fix the reactions that has a \code{0} with other species in the same side,
 removing the 0 and warning the user.
 }

@@ -20,7 +20,7 @@ DSD script.
 }
 \details{
 A definition is made by the following construction:
-\code{def *key* = *value*}. passing a key and value to this function,
+\verb{def *key* = *value*}. passing a key and value to this function,
 it returns a definition construction replacing the \emph{key} and \emph{value}
 by the parameters \code{key} and \code{value} specified.
 }

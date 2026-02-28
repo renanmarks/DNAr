@@ -108,6 +108,20 @@ compare_behaviors_nrmse <- function(bhv_sim, bhv_obs, ignore_time_column = T) {
 #' this functions returns the concentration of each species
 #' at a specific point in time within the derivative.
 #'
+#' @param species    A vector with the species of the reaction. The order of
+#'                   this vector is important because it will define the
+#'                   column order of the returned behavior.
+#' @param ci         A vector specifying the initial concentrations of the
+#'                   \code{species} specified, in order.
+#' @param reactions  A vector with the reactions of the CRN. If a reaction has
+#'                   has only reactants that are non in `species`, this
+#'                   reaction will be treated as `0 -> products`. Furthermore,
+#'                   this function treats a reaction `non_registered_species
+#'                   + registered_species -> products` equally to
+#'                   `registered_species -> products`, ignoring the species non
+#'                   registered on the `species` vector.
+#' @param ki         A vector defining the constant rate of each reaction
+#'                   in \code{reactions}, in order.
 #' @param behavior     The data returned by \code{\link{react}()}.
 #' @param time_points  A vector of indexes (representing multiple points in
 #'                     time) used for access lines of `behavior`.

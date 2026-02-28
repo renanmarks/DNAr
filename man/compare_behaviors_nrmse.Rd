@@ -4,12 +4,15 @@
 \alias{compare_behaviors_nrmse}
 \title{Compare the behavior of two reactions}
 \usage{
-compare_behaviors_nrmse(bhv_sim, bhv_obs)
+compare_behaviors_nrmse(bhv_sim, bhv_obs, ignore_time_column = T)
 }
 \arguments{
 \item{bhv_sim}{The simulated behavior.}
 
 \item{bhv_obs}{The observed behavior (used in the normalization).}
+
+\item{ignore_time_column}{Ignore the time column, the first column of
+a behavior}
 }
 \value{
 A data frame with the same columns of the behaviors and one row.

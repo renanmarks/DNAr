@@ -3,18 +3,30 @@
 \name{react_4domain}
 \alias{react_4domain}
 \title{Translate a formal CRN into a set of DNA based reactions according to the
-approach described by Soloveichik D et al. \code{[1]}}
+approach described by Soloveichik D et al. \verb{[1]}}
 \usage{
-react_4domain(species, ci, reactions, ki, qmax, cmax, alpha, beta, t,
-  auto_buffer = TRUE, verbose = FALSE, ...)
+react_4domain(
+  species,
+  ci,
+  reactions,
+  ki,
+  qmax,
+  cmax,
+  alpha,
+  beta,
+  t,
+  auto_buffer = TRUE,
+  verbose = FALSE,
+  ...
+)
 }
 \arguments{
 \item{species}{A vector with the species of the reaction. The order of
 this vector is important because it will define the
 column order of the returned behavior. The species names
-\code{L[0-9]*}, \code{H[0-9]*}, \code{W[0-9]*}, \code{O[0-9]*},
-\code{T[0-9]*}, \code{G[0-9]*}, \code{LS[0-9]*}, \code{HS[0-9]*},
-\code{WS[0-9]*} are not supported. For more information
+\verb{L[0-9]*}, \verb{H[0-9]*}, \verb{W[0-9]*}, \verb{O[0-9]*},
+\verb{T[0-9]*}, \verb{G[0-9]*}, \verb{LS[0-9]*}, \verb{HS[0-9]*},
+\verb{WS[0-9]*} are not supported. For more information
 about this, see the Section of \strong{Known limitations}.}
 
 \item{ci}{A vector specifying the initial concentrations of the
@@ -67,7 +79,7 @@ created based on reactions between strands of DNA. CRN_2 is simulated using
 of the species specified in the \code{species} parameter, the behavior of
 the  auxiliary ones are not returned. The parameters of these functions
 follows the same pattern of \code{\link{react}()}, only with some additions
-required by this approach \code{[1]} (here named as 4-domain).
+required by this approach \verb{[1]} (here named as 4-domain).
 }
 \section{Known limitations}{
 
@@ -191,6 +203,6 @@ plot_behavior(behavior)
 }
 \references{
 \itemize{
-\item \code{[1]} \insertRef{soloveichik2010dna}{DNAr}
+\item \verb{[1]} \insertRef{soloveichik2010dna}{DNAr}
 }
 }

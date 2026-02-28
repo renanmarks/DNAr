@@ -6,6 +6,13 @@
 \usage{
 reactants_in_reaction(species, reaction)
 }
+\arguments{
+\item{species}{A vector with the species of the reaction. The order of
+this vector is important because it will define the
+column order of the returned behavior.}
+
+\item{reaction}{A string representing the reaction.}
+}
 \value{
 A vector filled with indexes specifying the
 species that are in a reaction as a reactant.

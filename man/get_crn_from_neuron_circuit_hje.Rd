@@ -8,7 +8,7 @@ get_crn_from_neuron_circuit_hje(circuit)
 }
 \arguments{
 \item{circuit}{The circuit (returned by
-\code{\link{get_circuit_from_neuron_gates_hje}()})}
+\verb{\link{get_circuit_from_neuron_gates_hje}()})}
 }
 \value{
 A list specifying the CRN.

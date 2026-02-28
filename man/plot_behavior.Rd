@@ -4,18 +4,29 @@
 \alias{plot_behavior}
 \title{Plot the behavior of a CRN.}
 \usage{
-plot_behavior(behavior, species = NULL, x_label = "Time",
-  y_label = "Concentration", legend_name = "Species",
-  geom_list = list("line"), save_file_name = NULL, show_legend = TRUE,
-  show_x_label_name = TRUE, show_y_label_name = TRUE, y_origin_0 = FALSE,
-  variable_line_type = FALSE)
+plot_behavior(
+  behavior,
+  species = NULL,
+  x_label = "Time",
+  y_label = "Concentration",
+  legend_name = "Species",
+  geom_list = list("line"),
+  save_file_name = NULL,
+  show_legend = TRUE,
+  show_x_label_name = TRUE,
+  show_y_label_name = TRUE,
+  y_origin_0 = FALSE,
+  variable_line_type = FALSE,
+  variable_point_type = FALSE,
+  line_types = NULL
+)
 }
 \arguments{
 \item{behavior}{Behavior returned by \code{\link{react}()}}
 
-\item{species}{The vector with the species that should be plotted.
-If no one is specified, than all of them are
-plotted.}
+\item{species}{The vector with the species that should be
+plotted. If no one is specified, than all of
+them are plotted.}
 
 \item{x_label, y_label}{Label name of the x and y axis, respectively.
 The default are 'Time' and 'Concentration'.}
@@ -35,16 +46,25 @@ is specified, the won't be saved.}
 
 \item{show_legend}{Show legend in the plot, Default value is \code{TRUE}.}
 
-\item{show_x_label_name}{Show label name of x axis. Default value is \code{TRUE}.}
+\item{show_x_label_name}{Show label name of x axis. Default value is
+\code{TRUE}.}
 
-\item{show_y_label_name}{Show label name of y axis. Default value is \code{TRUE}.}
+\item{show_y_label_name}{Show label name of y axis. Default value is
+\code{TRUE}.}
 
 \item{y_origin_0}{Set the origin of y axis to 0. Default value is
 \code{FALSE}.}
 
 \item{variable_line_type}{If TRUE, the line type will change for each
-species. This is usefull when multiple species
+species. This is useful when multiple species
 has the same behavior.}
+
+\item{variable_point_type}{If TRUE, the point shape type will change for
+each species}
+
+\item{line_types}{Manually specify the types of lines. It must have
+the same size of the number of species to be
+plotted.}
 }
 \value{
 The object returned by \code{\link[ggplot2]{ggplot}()}, so you

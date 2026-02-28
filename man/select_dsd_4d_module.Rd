@@ -12,7 +12,7 @@ select_dsd_4d_module(n_reac, n_prod)
 \value{
 A list with two parameters:
 - \code{mod_func}: The module function obtained from
-\code{\link{dsd_4d_modules}()};
+\verb{\link{dsd_4d_modules}()};
 - \code{idx}: A vector with two numbers specifying the position
 used to get the module function.
 }

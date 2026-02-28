@@ -17,7 +17,7 @@ of the the derivative. The names of the results are the evaluated
 subexpressions.
 }
 \description{
-This functions works like \code{\link{eval_derivative}()}, but instead of
+This functions works like \verb{\link{eval_derivative}()}, but instead of
 evaluating the entire derivative, it will evaluate parts of it
-(delimited by \code{()}).
+(delimited by \verb{()}).
 }

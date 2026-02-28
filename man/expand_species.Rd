@@ -17,7 +17,7 @@ An expanded list of species.
 }
 \description{
 This function expand a list of species according to the stoichiometry
-of the species. E.g.: given a list of species \code{('A', 'B')} and
+of the species. E.g.: given a list of species \verb{('A', 'B')} and
 a stoichiometry of \code{A = 1} and \code{B = 2}, the resulting list
-will be a list \code{('A', 'B', 'B')}.
+will be a list \verb{('A', 'B', 'B')}.
 }

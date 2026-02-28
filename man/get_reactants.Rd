@@ -6,6 +6,9 @@
 \usage{
 get_reactants(reaction)
 }
+\arguments{
+\item{reaction}{A string representing the reaction.}
+}
 \description{
 This function returns the reactants of a reactions,
 removing their stoichiometry.

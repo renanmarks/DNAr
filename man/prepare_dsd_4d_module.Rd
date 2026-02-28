@@ -15,8 +15,8 @@ prepare_dsd_4d_module(module, k_idx, species_domains, reactants, products)
 generated}
 
 \item{reactants}{Reactants of the reaction. If a reaction is
-something like \code{2A -> B}, a list with
-two separated A's \code{('A', 'A')} must be passed.
+something like \verb{2A -> B}, a list with
+two separated A's \verb{('A', 'A')} must be passed.
 If a reaction is of formation, \code{NULL} must be passed}
 
 \item{products}{The reaction products. It has the same requirements

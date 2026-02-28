@@ -22,6 +22,11 @@
 #' This matrix  has #lines = #reactions and #columns = #species and it
 #' represents the stoichiometry of each species at each reaction.
 #'
+#' @param species    A vector with the species of the reaction. The order of
+#'                   this vector is important because it will define the
+#'                   column order of the returned behavior.
+#' @param reactions  A vector with the reactions of the CRN.
+#'
 #' @return A list with the named indexes `prod` (stoichiometry matrix of the
 #'         products), `react` (stoichiometry matrix of reactants) and `M`
 #'         (the M matrix generate from the difference of theses two matrices).

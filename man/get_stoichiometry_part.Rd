@@ -6,6 +6,9 @@
 \usage{
 get_stoichiometry_part(reaction_part)
 }
+\arguments{
+\item{reaction_part}{Left or right part of a reaction.}
+}
 \description{
 This function is used when you want to know the count of molecules
 in part of a reaction.

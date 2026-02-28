@@ -913,12 +913,12 @@ get_dsd_def_str <- function(key, val) {
 #'
 #' If a reaction has 2 reactants and 1 product,
 #' will be in the position 3,2. The formation reactions are in the
-#' line 1, and the degradation reactions are in the column 1 ([[,1]]).
+#' line 1, and the degradation reactions are in the column 1 (\[\[,1\]\]).
 #'
-#' The position [[1,1]] is filled with `NA` because it represents an
+#' The position \[\[1,1\]\] is filled with `NA` because it represents an
 #' invalid reaction (`0 -> 0`).
 #'
-#' @return  The matrix of functions which can be accesses with [[i,j]]
+#' @return  The matrix of functions which can be accesses with \[\[i,j\]\]
 dsd_4d_modules <- function() {
     # Matrix with the module functions. The higher the row,the  higher
     # the number of products, The columns has the same relation with
@@ -1133,6 +1133,26 @@ dsd_4d_module_str <- function(reaction, species_domains, k_idx) {
 #' approach of implementing CRNs using DNA. The parameters are the same
 #' of \code{\link{react_4domain}()}, except for the `filename`, which is
 #' the name of the file that will be exported and should be specified with
+#' an extension, since there is no standard extension for DSD scripts.
+#'
+#' @param species      A vector with the species of the reaction. The order of
+#'                     this vector is important because it will define the
+#'                     column order of the returned behavior. The species names
+#'                     `L[0-9]*`, `H[0-9]*`, `W[0-9]*`, `O[0-9]*`,
+#'                     `T[0-9]*`, `G[0-9]*`, `LS[0-9]*`, `HS[0-9]*`,
+#'                     `WS[0-9]*` are not supported. For more information
+#'                     about this, see the Section of **Known limitations**.
+#' @param ci           A vector specifying the initial concentrations of the
+#'                     \code{species} specified, in order.
+#' @param reactions    A vector with the reactions of the CRN^*.
+#' @param ki           A vector defining the constant rate of each reaction
+#'                     in \code{reactions}, in order.
+#' @param qmax         Maximum rate constant for the auxiliary reactions.
+#' @param cmax         Maximum initial concentration for the auxiliary species.
+#' @param alpha,beta   Rescaling parameters.
+#' @param t            A vector specifying the time interval. Each value
+#'                     would be a specific time point.
+#' @param filename     The name of the file that will be exported and should be specified with
 #' an extension, since there is no standard extension for DSD scripts.
 #'
 #' @export

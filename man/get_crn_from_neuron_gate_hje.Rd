@@ -8,7 +8,7 @@ get_crn_from_neuron_gate_hje(gate)
 }
 \arguments{
 \item{gate}{List representing the gate (returned by
-\code{\link{get_neuron_generic_gate_hje}()}, for example).}
+\verb{\link{get_neuron_generic_gate_hje}()}, for example).}
 }
 \value{
 A CRN representing the \code{gate}.

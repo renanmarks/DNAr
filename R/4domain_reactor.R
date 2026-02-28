@@ -29,6 +29,8 @@
 #' \code{TRUE} if the reaction is supported, or \code{FALSE}
 #' otherwise.
 #'
+#' @param reaction   A string containing the text representing the reaction.
+#'
 #' @examples
 #' DNAr:::check_reaction_4domain('A + B -> C')   # Should return TRUE
 #' DNAr:::check_reaction_4domain('2A -> B')      # Should return TRUE
@@ -46,13 +48,21 @@ check_reaction_4domain <- function(reaction) {
 #' The parameters of this function follows the same
 #' semantics of \code{\link{react_4domain}()}.
 #'
+#' @param reactions  A vector with the reactions of the CRN.
+#' @param ki         A vector defining the constant rate of each reaction
+#'                   in \code{reactions}, in order.
+#' @param qmax       Maximum rate constant for the auxiliary reactions.
+#' @param cmax       Maximum initial concentration for the auxiliary species.
+#'
 #' @return \code{NULL} if no buffer modules were added. Otherwise
 #' it returns a list with:
-#'   - `lambda_1`      = lambda^{-1} value;
+#'   - `lambda_1`      = lambda^\{-1\} value;
 #'   - `new_species`   = vector with the new species added;
 #'   - `new_cis`       = vector with the initial concentrations;
 #'   - `new_reactions` = vector with the new reactions;
 #'   - `new_ks`        = constant rate of the new reactions.
+#'
+#' @importFrom Rdpack reprompt
 #'
 #' @references
 #'   - `[1]` \insertRef{soloveichik2010dna}{DNAr}

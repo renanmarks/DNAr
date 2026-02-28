@@ -6,6 +6,11 @@
 \usage{
 get_stoichiometry_onespecies(one_species, reaction)
 }
+\arguments{
+\item{one_species}{A string containing a species from reaction.}
+
+\item{reaction}{A string representing the reaction.}
+}
 \value{
 A list with \code{left_sto} being the stoichiometry of a
 species in the left side of a reaction, and \code{right_sto} being

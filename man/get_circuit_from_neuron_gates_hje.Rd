@@ -17,7 +17,7 @@ A circuit, which is a list with the following fields in it:
 }
 \description{
 This function checks if the gates and gate bindings are correctly defined
-(using \code{\link{check_neuron_gate_hje}()} and \code{\link{check_neuron_gate_hje}()}
+(using \verb{\link{check_neuron_gate_hje}()} and \verb{\link{check_neuron_gate_hje}()}
 functions). Then, it structures all gates into one single list called
 circuit. The circuit represents all the gates and their interactions,
 defining one single object containing all the gate network.

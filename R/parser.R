@@ -20,6 +20,8 @@
 #'
 #' Given a reaction like 'A + B -> C', this function
 #' returns 'A + B '.
+#'
+#' @param react_str  A string representing the reaction
 get_first_part <- function(react_str) {
     return(sub('->.*', '', react_str))
 }
@@ -28,6 +30,8 @@ get_first_part <- function(react_str) {
 #'
 #' Given a reaction like 'A + B -> C', this function
 #' returns ' C'.
+#'
+#' @param react_str  A string representing the reaction
 get_second_part <- function(react_str) {
     return(sub('.*->', '', react_str))
 }
@@ -36,6 +40,8 @@ get_second_part <- function(react_str) {
 #'
 #' Given a reaction, this functions checks if it is
 #' a bimolecular reaction.
+#'
+#' @param react_str  A string representing the reaction
 #'
 #' @examples
 #' DNAr:::is_bimolecular('2A -> B')     # Should return TRUE
@@ -50,6 +56,8 @@ is_bimolecular <- function(react_str) {
 #'
 #' Given a reaction, this functions checks if it is
 #' a unimolecular reaction.
+#'
+#' @param react_str  A string representing the reaction
 #'
 #' @examples
 #' DNAr:::is_bimolecular('2A -> B')     # Should return FALSE
@@ -95,6 +103,8 @@ is_formation <- function(react_str) {
 #' \code{\link{get_second_part}()} and then use this function with the second
 #' part as the parameter.
 #'
+#' @param react_part  A string containing part of the reaction
+#'
 #' @examples
 #' sp <- DNAr:::get_second_part('A -> 0')
 #' DNAr:::isempty_part(sp)  # Should return TRUE
@@ -108,6 +118,9 @@ isempty_part <- function(react_part) {
 #' With the reaction part 'A + B ', for instance, and \code{one_species}
 #' begin equal to 'A', this function would return 1. On the case of '2A ' it
 #' would return 2.
+#'
+#' @param one_species A string containing a species from reaction_part.
+#' @param reaction_part  Left or right part of a reaction.
 get_onespecies_count <- function(one_species, reaction_part) {
     m <- gregexpr(
         paste('\\b[1-9]*', one_species, '\\b', sep = ''),
@@ -131,6 +144,9 @@ get_onespecies_count <- function(one_species, reaction_part) {
 #' This function uses \code{\link{get_onespecies_count}()} in the left
 #' and right part of a reaction to get the stoichiometry of a species
 #' in a reaction.
+#'
+#' @param one_species A string containing a species from reaction.
+#' @param reaction  A string representing the reaction.
 #'
 #' @return A list with \code{left_sto} being the stoichiometry of a
 #' species in the left side of a reaction, and \code{right_sto} being
@@ -157,6 +173,8 @@ get_stoichiometry_onespecies <- function(one_species, reaction) {
 #' This function is used when you want to know the count of molecules
 #' in part of a reaction.
 #'
+#' @param reaction_part  Left or right part of a reaction.
+#'
 #' @examples
 #' DNAr:::get_stoichiometry_part('A + B ')  # It should return 2
 #' DNAr:::get_stoichiometry_part('2A ')     # It should return 2
@@ -180,6 +198,8 @@ get_stoichiometry_part <- function(reaction_part) {
 #' Use this function to get the stoichiometry of the left and
 #' right part of a reaction.
 #'
+#' @param reaction  A string representing the reaction
+#'
 #' @return a list with left_sto and right_sto being the stoichiometry
 #' of the left and right part respectively.
 #'
@@ -200,6 +220,8 @@ get_stoichiometry_all <- function(reaction) {
 #'
 #' Use this function to get rid of the stoichiometry of a
 #' species string.
+#'
+#' @param species A string containing the species from a reaction_part.
 #'
 #' @return The species string without the stoichiometry (number)
 #' specifying the number of molecules
@@ -260,6 +282,8 @@ get_species <- function(reaction_part) {
 #' This function returns the reactants of a reactions,
 #' removing their stoichiometry.
 #'
+#' @param reaction  A string representing the reaction.
+#'
 #' @examples
 #' DNAr:::get_reactants('A + B -> C')  # Returns c('A', 'B')
 #' DNAr:::get_reactants('2A -> B')     # Returns c('A')
@@ -275,6 +299,8 @@ get_reactants <- function(reaction) {
 #' removing their stoichiometry. If the reaction is of the type
 #' 'A -> 0', '0' is returned as a species since it is considered
 #' a special species.
+#'
+#' @param reaction  A string representing the reaction.
 #'
 #' @examples
 #' DNAr:::get_products('A + B -> C')   # Returns c('C')
@@ -292,6 +318,11 @@ get_products <- function(reaction) {
 #' reactants in a reaction, returning a vector with the
 #' species indexes in \code{species} that are reactants
 #' in \code{reaction}.
+#'
+#' @param species    A vector with the species of the reaction. The order of
+#'                   this vector is important because it will define the
+#'                   column order of the returned behavior.
+#' @param reaction  A string representing the reaction.
 #'
 #' @return A vector filled with indexes specifying the
 #' species that are in a reaction as a reactant.
@@ -326,6 +357,23 @@ reactants_in_reaction <- function(species, reaction) {
 #'  - If there is no duplicate of species names on the `species` parameter.
 #' The parameters of this function are the same of \code{\link{react}()}.
 #'
+#' @param species    A vector with the species of the reaction. The order of
+#'                   this vector is important because it will define the
+#'                   column order of the returned behavior.
+#' @param ci         A vector specifying the initial concentrations of the
+#'                   \code{species} specified, in order.
+#' @param reactions  A vector with the reactions of the CRN. If a reaction has
+#'                   has only reactants that are non in `species`, this
+#'                   reaction will be treated as `0 -> products`. Furthermore,
+#'                   this function treats a reaction `non_registered_species
+#'                   + registered_species -> products` equally to
+#'                   `registered_species -> products`, ignoring the species non
+#'                   registered on the `species` vector.
+#' @param ki         A vector defining the constant rate of each reaction
+#'                   in \code{reactions}, in order.
+#' @param t          A vector specifying the time interval. Each value
+#'                   would be a specific time point.
+#'
 #' @return  The reactions after the preprocessing made by
 #'          `\link{check_fix_reaction}()` witch checks the reactions and fix
 #'          them when it is possible.
@@ -334,7 +382,7 @@ check_crn <- function(species, ci, reactions, ki, t) {
     # This is a helper function to check the parameters
     check_var <- function(vec, type_checker, err_msgs) {
         # Check if the vec parameter is if the type vector
-        assertthat::assert_that(is.vector(species), msg = err_msg[[1]])
+        assertthat::assert_that(is.vector(species), msg = err_msgs[[1]])
 
         # Check if all vector elements are of the correct type
         # using the type_checker function

@@ -4,8 +4,12 @@
 \alias{get_neuron_majority_gate}
 \title{Get a majority gate}
 \usage{
-get_neuron_majority_gate(gate_name, n_inputs, input_cis,
-  binding_inhibit = NULL)
+get_neuron_majority_gate(
+  gate_name,
+  n_inputs,
+  input_cis,
+  binding_inhibit = NULL
+)
 }
 \arguments{
 \item{gate_name}{The name of the gate.}
@@ -20,15 +24,15 @@ whether the input with the same index will
 be an inhibitory binding or not. If no vector
 is passed, no binding will be inhibited. This
 parameter is passed to
-\code{\link{get_neuron_generic_gate_hje}()}.}
+\verb{\link{get_neuron_generic_gate_hje}()}.}
 }
 \value{
 A list representing the gate. To transform this representation into
-a CRN (to simulate with \code{\link{react}()}, for example) you have
-to use the function \code{\link{get_crn_from_neuron_gate_hje}()}.
+a CRN (to simulate with \verb{\link{react}()}, for example) you have
+to use the function \verb{\link{get_crn_from_neuron_gate_hje}()}.
 }
 \description{
 It returns a majority gate using neurons based on McCullogh-Pitts
-model (neurons returned by \code{\link{get_neuron_hje}()}). It supports an
+model (neurons returned by \verb{\link{get_neuron_hje}()}). It supports an
 arbitrary number of inputs (although it must be odd).
 }

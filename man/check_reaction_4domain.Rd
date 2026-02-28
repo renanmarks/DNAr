@@ -7,6 +7,9 @@ supported by \code{\link{react_4domain}()}.}
 \usage{
 check_reaction_4domain(reaction)
 }
+\arguments{
+\item{reaction}{A string containing the text representing the reaction.}
+}
 \description{
 The reactions supported by \code{\link{react_4domain}()} are
 only the uni or bimolecular. This function checks if the

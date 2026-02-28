@@ -4,13 +4,22 @@
 \alias{get_neuron_generic_gate_hje}
 \title{Get a generic neuron gate with n inputs and 1 output}
 \usage{
-get_neuron_generic_gate_hje(gate_name, input_neuron_names, output_neuron_name,
-  input_neuron_cis, binding_enzyme_configs, binding_cis,
-  binding_inhibit = NULL)
+get_neuron_generic_gate_hje(
+  gate_name,
+  input_neuron_names,
+  output_neuron_name,
+  input_neuron_cis,
+  binding_enzyme_configs,
+  binding_cis,
+  binding_inhibit = NULL
+)
 }
 \arguments{
 \item{gate_name}{String specifying the gate name. Used for
 identification purpose.}
+
+\item{input_neuron_names}{A list of string. Each string specifies a
+neuron name.}
 
 \item{output_neuron_name}{A string being the output neuron name}
 
@@ -35,18 +44,16 @@ of the bindings}
 whether the binding with the same index will
 be an inhibitory binding or not. If no vector
 is passed, no binding will be inhibited.}
-
-\item{input_neuron_name}{A list of string. Each string specifies}
 }
 \value{
 A list representing the gate. This list comes with three parameters:
 \itemize{
 \item \code{output_neuron_crn}: A neuron CRN returned by
-\code{\link{get_neuron_hje}()};
+\verb{\link{get_neuron_hje}()};
 \item \code{input_neuron_crns}: A list of neuron CRNs also returned by
-\code{\link{get_neuron_hje}()};
+\verb{\link{get_neuron_hje}()};
 \item \code{binding_crns}: A list of binding CRNs returned by
-\code{\link{get_neuron_binding_hje}()}, which are the binding
+\verb{\link{get_neuron_binding_hje}()}, which are the binding
 of each input neuron with the output neuron.
 }
 }
@@ -62,5 +69,5 @@ its output to the last neuron, the output neuron. This neuron has as input
 the sum of the output of all input neurons.
 }
 \seealso{
-\code{\link{react}()} for more about the neuron behavior.
+\verb{\link{react}()} for more about the neuron behavior.
 }
