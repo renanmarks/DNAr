@@ -1,11 +1,13 @@
 Package: DNAr
 Type: Package
 Title: Simulates chemical reaction networks constructed with DNA
-Version: 0.9.6
+Version: 0.9.7
 Authors@R: c(person("Daniel", "Kneipp", email = "danielv@dcc.ufmg.br",
-                    role = c("aut", "cre")),
+                    role = c("aut")),
              person("Marcos", "Guterres", email = "mguterres@yahoo.com",
-                    role = c("aut")))
+                    role = c("aut")),
+             person("Renan", "Marks", email = "renan.marks@ufms.br",
+                    role = c("cre")))
 Description: With this package you can simulate CRNs implemented with 
     DNA. Currently there is only one approach for CRN construction with 
     DNA, but the plan is to expand this to other approachs using the CRN 
@@ -23,9 +25,8 @@ Imports:
     reshape2 (>= 1.4.2),
     RColorBrewer (>= 1.1.2),
     assertthat (>= 0.2.0),
-    magrittr (>= 1.5),
     Rdpack (>= 0.4.20)
-RoxygenNote: 6.0.1
+RoxygenNote: 7.3.3
 RdMacros: Rdpack
 Roxygen: list(markdown = TRUE)
 Suggests: testthat
